@@ -1,0 +1,137 @@
+/* ============================================
+   XANZI Tech – Global Styles (Theodo-inspired)
+   ============================================ */
+
+:root {
+  /* Colors – XANZI navy & teal palette */
+  --color-white: #FFFFFF;
+  --color-primary: #2ED3C6;
+  --color-primary-100: #d4f5f2;
+  --color-secondary: #0B1F33;
+  --color-secondary-100: #d6e4f0;
+  --color-secondary-600: #143352;
+  --color-darkest: #0B1F33;
+  --color-dark: #8f99aa;
+  --color-lightest: #e9ebef;
+  --color-grey-050: #f6f7f8;
+  --color-grey-200: #d9dde4;
+  --color-grey-300: #bfc5d1;
+  --color-grey-500: #667085;
+  --color-grey-600: #777f99;
+  --color-grey-900: #4b4e5d;
+  --color-light: #d1e2f2;
+  --color-black: #000000;
+
+  /* Typography – Theodo sizes */
+  --font-sans: 'Poppins', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --title-h6: 22px;
+  --title-h5: 30px;
+  --title-h4: 32px;
+  --title-h3: 48px;
+  --title-h2: 60px;
+  --title-h1: 66px;
+
+  /* Spacing & Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 46px;
+  --radius-nav: 32px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-base: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-white);
+  color: var(--color-darkest);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: var(--text-md);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-grey-050);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-darkest);
+  border-radius: 3px;
+  border: 2px solid var(--color-grey-050);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-grey-500);
+}
+
+::selection {
+  background: var(--color-primary-100);
+  color: var(--color-darkest);
+}
+
