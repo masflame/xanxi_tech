@@ -1,29 +1,63 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Rocket } from 'lucide-react';
 import telkomImg from '../assets/Achievements/telkom.jpg';
 import absaImg from '../assets/Achievements/absa.jpg';
 
 export default function About() {
   const sectionRef = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== 'undefined' ? window.innerWidth >= 992 : true
+  );
+
+  const revealOffset = isDesktop
+    ? ['start end', 'end start']
+    : ['start 96%', 'end 42%'];
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start end', 'end start'],
+    offset: revealOffset,
   });
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 992px)');
+    const onChange = (e) => setIsDesktop(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
 
   /* Curtain / mask reveal – section opens up like doors parting */
   const clipPath = useTransform(scrollYProgress, (v) => {
-    const prog = Math.min(1, v * 2.5);
-    const inset = 8 * (1 - prog);
-    const radius = 24 * (1 - prog);
+    const speed = isDesktop ? 2.5 : 3.1;
+    const maxInset = isDesktop ? 8 : 2.4;
+    const maxRadius = isDesktop ? 24 : 10;
+    const prog = Math.min(1, v * speed);
+    const inset = maxInset * (1 - prog);
+    const radius = maxRadius * (1 - prog);
     return `inset(${inset}% round ${radius}px)`;
   });
 
   /* Staggered content entrances */
-  const textX = useTransform(scrollYProgress, [0.1, 0.32], [-40, 0]);
-  const textOpacity = useTransform(scrollYProgress, [0.1, 0.32], [0, 1]);
-  const highlightsX = useTransform(scrollYProgress, [0.15, 0.38], [40, 0]);
-  const highlightsOpacity = useTransform(scrollYProgress, [0.15, 0.38], [0, 1]);
+  const textX = useTransform(
+    scrollYProgress,
+    isDesktop ? [0.1, 0.32] : [0.01, 0.13],
+    isDesktop ? [-40, 0] : [-14, 0]
+  );
+  const textOpacity = useTransform(
+    scrollYProgress,
+    isDesktop ? [0.1, 0.32] : [0.01, 0.13],
+    [0, 1]
+  );
+  const highlightsX = useTransform(
+    scrollYProgress,
+    isDesktop ? [0.15, 0.38] : [0.04, 0.18],
+    isDesktop ? [40, 0] : [14, 0]
+  );
+  const highlightsOpacity = useTransform(
+    scrollYProgress,
+    isDesktop ? [0.15, 0.38] : [0.04, 0.18],
+    [0, 1]
+  );
 
   return (
     <motion.section
@@ -38,19 +72,20 @@ export default function About() {
             className="about__text"
             style={{ x: textX, opacity: textOpacity }}
           >
-            <span className="section__label">Who We Are</span>
+            <span className="section__label">Our Story</span>
             <h2 className="section__title">About XANZI Tech</h2>
             <p className="about__desc">
-              XANZI Tech is a technology company focused on engineering secure, 
-              scalable digital systems for organisations that demand more than a basic 
-              web presence. We design and build platforms, portals, dashboards, and 
-              institutional-grade systems that solve real operational challenges.
+              XANZI Tech started with a simple frustration: too many organisations 
+              were stuck with systems that did not match their ambition. Off-the-shelf 
+              tools that could not scale. Disconnected workflows. Technology that 
+              created problems instead of solving them.
             </p>
             <p className="about__desc">
-              Founded with a vision to bridge the gap between innovation and execution, 
-              we combine modern development practices with a deep understanding of 
-              stakeholder needs to deliver systems that are secure, performant, and 
-              built to last.
+              We set out to change that. Today we are a focused engineering team 
+              based in Pretoria, working with government bodies, institutions, and 
+              enterprises who need technology they can actually rely on. Our mission 
+              is to close the gap between what organisations need and what their 
+              current systems deliver.
             </p>
           </motion.div>
 

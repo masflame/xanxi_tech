@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
-import { Send, Mail, ArrowRight } from 'lucide-react';
+import { Send, Mail, ArrowRight, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { isSupabaseConfigured, supabase } from '../lib/supabaseClient';
 
 const CONTACT_TABLE = import.meta.env.VITE_SUPABASE_CONTACT_TABLE || 'Project_Enquiries';
@@ -129,7 +129,25 @@ export default function Contact() {
             <div className="contact__details">
               <div className="contact__detail">
                 <Mail size={18} strokeWidth={1.5} />
-                <span>hello@xanzitech.com</span>
+                <a href="mailto:aphanenate@gmail.com">aphanenate@gmail.com</a>
+              </div>
+              <div className="contact__detail">
+                <Phone size={18} strokeWidth={1.5} />
+                <a href="tel:+27815918802">+27 81 591 8802</a>
+              </div>
+              <div className="contact__detail">
+                <ExternalLink size={18} strokeWidth={1.5} />
+                <a
+                  href="https://www.linkedin.com/company/xanzitech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  xanzitech
+                </a>
+              </div>
+              <div className="contact__detail contact__detail--address">
+                <MapPin size={18} strokeWidth={1.5} />
+                <span>5 De Friedland St, Capital Park, Pretoria, 0084</span>
               </div>
             </div>
 

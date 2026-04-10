@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { Users, LineChart, FileCheck, Building2 } from 'lucide-react';
 
 const systems = [
@@ -65,18 +65,32 @@ function SysCard({ sys, index, progress }) {
 
 export default function Systems() {
   const sectionRef = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== 'undefined' ? window.innerWidth >= 992 : true
+  );
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
 
+  const staticProgress = useMotionValue(1);
+  const progress = isDesktop ? scrollYProgress : staticProgress;
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 992px)');
+    const onChange = (e) => setIsDesktop(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   /* Staggered header choreography */
-  const capsuleOpacity = useTransform(scrollYProgress, [0.02, 0.1], [0, 1]);
-  const capsuleY = useTransform(scrollYProgress, [0.02, 0.1], [20, 0]);
-  const titleOpacity = useTransform(scrollYProgress, [0.04, 0.12], [0, 1]);
-  const titleY = useTransform(scrollYProgress, [0.04, 0.12], [30, 0]);
-  const subtitleOpacity = useTransform(scrollYProgress, [0.06, 0.14], [0, 1]);
-  const subtitleY = useTransform(scrollYProgress, [0.06, 0.14], [20, 0]);
+  const capsuleOpacity = useTransform(progress, [0.02, 0.1], [0, 1]);
+  const capsuleY = useTransform(progress, [0.02, 0.1], [20, 0]);
+  const titleOpacity = useTransform(progress, [0.04, 0.12], [0, 1]);
+  const titleY = useTransform(progress, [0.04, 0.12], [30, 0]);
+  const subtitleOpacity = useTransform(progress, [0.06, 0.14], [0, 1]);
+  const subtitleY = useTransform(progress, [0.06, 0.14], [20, 0]);
 
   return (
     <section id="systems" className="systems" ref={sectionRef}>
@@ -108,7 +122,7 @@ export default function Systems() {
 
         <div className="systems__grid">
           {systems.map((sys, i) => (
-            <SysCard key={sys.title} sys={sys} index={i} progress={scrollYProgress} />
+            <SysCard key={sys.title} sys={sys} index={i} progress={progress} />
           ))}
         </div>
       </div>

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="section__container">
         <div className="footer__top">
           <div className="footer__brand">
-            <img src={logo} alt="XANZI Tech" height="32" />
+            <img src={logo} alt="XANZI Tech" />
             <p className="footer__tagline">
               Building secure, scalable digital systems for the future.
             </p>
@@ -17,14 +17,30 @@ export default function Footer() {
               <h4>Navigate</h4>
               <a href="#home">Home</a>
               <a href="#capabilities">Capabilities</a>
-              <a href="#systems">Systems</a>
+              <a href="#process">Process</a>
               <a href="#work">Work</a>
+              <a href="#industries">Industries</a>
             </div>
             <div className="footer__col">
               <h4>Company</h4>
               <a href="#about">About</a>
-              <a href="#architecture">Architecture</a>
+              <a href="#security">Security</a>
+              <a href="#insights">Insights</a>
+              <a href="#faq">FAQ</a>
               <a href="#contact">Contact</a>
+            </div>
+            <div className="footer__col">
+              <h4>Contact</h4>
+              <a href="mailto:aphanenate@gmail.com">aphanenate@gmail.com</a>
+              <a href="tel:+27815918802">+27 81 591 8802</a>
+              <a
+                href="https://www.linkedin.com/company/xanzitech"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn / xanzitech
+              </a>
+              <span className="footer__text">5 De Friedland St, Capital Park, Pretoria, 0084</span>
             </div>
           </div>
         </div>

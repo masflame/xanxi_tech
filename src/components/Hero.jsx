@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 import heroBgVideo from '../assets/background/background.mp4';
 
 const fadeUp = {
@@ -89,17 +90,31 @@ export default function Hero({ ready = false }) {
         style={{ y: statsY, opacity: statsOpacity, willChange: 'transform' }}
       >
         <div className="hero__stat">
-          <h3 className="hero__stat-num">10+</h3>
+          <h3 className="hero__stat-num">5+</h3>
           <p className="hero__stat-label">Systems delivered</p>
         </div>
         <div className="hero__stat">
           <h3 className="hero__stat-num">99.9%</h3>
           <p className="hero__stat-label">Uptime SLA</p>
         </div>
-        <div className="hero__stat">
+        <a
+          href="#about"
+          className="hero__stat hero__stat--link"
+          onClick={(e) => {
+            e.preventDefault();
+            const target = document.querySelector('#about');
+            if (target && window.__lenis) {
+              window.__lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+            } else if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
           <h3 className="hero__stat-num">Award</h3>
-          <p className="hero__stat-label">Winning team</p>
-        </div>
+          <p className="hero__stat-label">
+            Winning team <ArrowRight size={14} className="hero__stat-arrow" />
+          </p>
+        </a>
       </motion.div>
 
       {/* Background parallax layers – move slower */}

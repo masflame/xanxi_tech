@@ -62,7 +62,7 @@ export default function Work() {
             style={isDesktop ? { opacity: headerOpacity, y: headerY } : undefined}
           >
             <span className="section__label">Portfolio</span>
-            <h2 className="section__title">Selected Work</h2>
+            <h2 className="section__title">Our Work</h2>
             <p className="section__subtitle">
               Real systems delivered for real organisations – each engineered for impact.
             </p>

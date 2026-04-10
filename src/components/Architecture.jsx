@@ -1,27 +1,31 @@
-import { Monitor, Server, Lock, RefreshCw } from 'lucide-react';
+import { Monitor, Server, Database, GitBranch } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 const layers = [
   {
     icon: Monitor,
-    title: 'Frontend Engineering',
-    desc: 'Modern, high-performance web interfaces designed for responsiveness, accessibility, and seamless user interaction.',
+    title: 'Frontend & Component Architecture',
+    tags: ['React', 'Vite', 'Framer Motion'],
+    desc: 'Modular, component-driven interfaces with lazy loading, code splitting, and optimised rendering pipelines. Designed for high-performance, interactive user experiences across web and mobile form factors.',
   },
   {
     icon: Server,
-    title: 'Backend Engineering',
-    desc: 'Scalable backend systems leveraging technologies such as .NET (C#) and API-driven architectures to support complex business logic and secure data processing.',
+    title: 'API & Business Logic Layer',
+    tags: ['ASP.NET Core (C#)', 'REST APIs', 'Edge Functions'],
+    desc: 'Robust backend services built with ASP.NET Core, handling business logic, validation, and secure data orchestration. Cleanly structured API layers ensure scalability, maintainability, and seamless client-server communication.',
   },
   {
-    icon: Lock,
-    title: 'Security & Identity',
-    desc: 'Enterprise-grade authentication, role-based access control, and structured data protection aligned with industry best practices.',
+    icon: Database,
+    title: 'Database & Data Modelling',
+    tags: ['PostgreSQL', 'Redis', 'Row-Level Security'],
+    desc: 'Well-structured, normalised schemas with enforced row-level security policies. Optimised queries, indexing strategies, and real-time subscriptions enable secure, high-performance data access at scale.',
   },
   {
-    icon: RefreshCw,
-    title: 'Systems Integration',
-    desc: 'Seamless integration with internal systems, CMS platforms, and external services through secure APIs and interoperable architectures.',
+    icon: GitBranch,
+    title: 'Infrastructure, DevOps & Scalability',
+    tags: ['Docker', 'Kubernetes', 'Vercel', 'GitHub Actions'],
+    desc: 'Containerised applications deployed via Docker and orchestrated with Kubernetes for scalable, resilient infrastructure. CI/CD pipelines automate testing, preview environments, and zero-downtime deployments.',
   },
 ];
 
@@ -45,6 +49,13 @@ function ArchCard({ layer, index, progress }) {
         <div className="arch-card__head">
           <h3 className="arch-card__title">{layer.title}</h3>
         </div>
+        {layer.tags && (
+          <div className="arch-card__tags">
+            {layer.tags.map((tag) => (
+              <span key={tag} className="arch-card__tech">{tag}</span>
+            ))}
+          </div>
+        )}
         <p className="arch-card__desc">{layer.desc}</p>
       </div>
     </motion.div>
@@ -69,10 +80,10 @@ export default function Architecture() {
             className="section__header"
             style={{ opacity: headerOpacity, y: headerY }}
           >
-            <span className="section__label">Our Stack</span>
-            <h2 className="section__title">How We Build</h2>
+            <span className="section__label">Under the Hood</span>
+            <h2 className="section__title">Our Tech Stack</h2>
             <p className="section__subtitle">
-              A modern, layered architecture designed for security, speed, and seamless scalability.
+              The engineering layers behind every system we ship.
             </p>
           </motion.div>
 

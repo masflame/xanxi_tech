@@ -56,6 +56,35 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
+@media (max-width: 991px) {
+  :root {
+    --text-md: 15px;
+    --text-lg: 17px;
+    --text-xl: 18px;
+    --title-h6: 20px;
+    --title-h5: 26px;
+    --title-h4: 28px;
+    --title-h3: 40px;
+    --title-h2: 48px;
+    --title-h1: 52px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --text-sm: 13px;
+    --text-md: 14px;
+    --text-lg: 16px;
+    --text-xl: 17px;
+    --title-h6: 18px;
+    --title-h5: 22px;
+    --title-h4: 24px;
+    --title-h3: 32px;
+    --title-h2: 38px;
+    --title-h1: 40px;
+  }
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
