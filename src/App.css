@@ -1834,7 +1834,11 @@
 
 @media (max-width: 640px) {
   .footer__top { flex-direction: column; gap: 32px; }
-  .footer__links { gap: 40px; }
+  .footer__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
 }
 
 /* ---- COOKIE BANNER ---- */
@@ -2163,9 +2167,14 @@
     height: 90px;
   }
 
-  .footer__top,
-  .footer__links {
+  .footer__top {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
