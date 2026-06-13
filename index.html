@@ -44,34 +44,68 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
-      "@id": "https://xanziteh.co.za/#organization",
-      "name": "XANZI Tech",
-      "alternateName": "XANZI Technology",
-      "url": "https://xanziteh.co.za",
-      "description": "XANZI Tech is a Pretoria-based enterprise software engineering agency specialising in secure, scalable digital systems, multi-tenant stakeholder portals, GovTech platforms, ESG analytics dashboards, and POPIA-compliant cloud-native applications for governments, educational institutions, and corporate enterprises across South Africa and Africa.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pretoria",
-        "addressRegion": "Gauteng",
-        "addressCountry": "ZA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -25.7479,
-        "longitude": 28.2293
-      },
-      "areaServed": ["Pretoria", "Johannesburg", "Gauteng", "South Africa", "Africa"],
-      "award": ["Telkom Innovation Awards 2025 — Winner", "ABSA x YEI Emerging Innovators Programme"],
-      "knowsAbout": [
-        "Enterprise Software Engineering",
-        "GovTech Platform Development",
-        "POPIA Compliance Engineering",
-        "Multi-Tenant Platform Architecture",
-        "Supabase Row-Level Security",
-        "React ASP.NET Core Development",
-        "ESG Analytics Dashboards",
-        "Docker Kubernetes Deployment"
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://xanziteh.co.za/#localbusiness",
+          "name": "XANZI Tech",
+          "url": "https://xanziteh.co.za",
+          "description": "XANZI Tech engineers secure, scalable digital systems, multi-user platforms, stakeholder portals, and data dashboards for governments, enterprises, and educational institutions across South Africa and Africa.",
+          "priceRange": "$$$$",
+          "openingHours": "Mo-Fr 08:00-17:00",
+          "email": "hello@xanziteh.co.za",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5 De Friedland St, Capital Park",
+            "addressLocality": "Pretoria",
+            "addressRegion": "Gauteng",
+            "postalCode": "0084",
+            "addressCountry": "ZA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -25.7328,
+            "longitude": 28.1918
+          },
+          "hasMap": "https://maps.google.com/?q=5+De+Friedland+St,+Capital+Park,+Pretoria,+0084",
+          "areaServed": ["Pretoria", "Johannesburg", "Gauteng", "South Africa", "Africa"],
+          "parentOrganization": { "@id": "https://xanziteh.co.za/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://xanziteh.co.za/#organization",
+          "name": "XANZI Tech",
+          "alternateName": "XANZI Technology",
+          "url": "https://xanziteh.co.za",
+          "description": "XANZI Tech is a Pretoria-based enterprise software engineering agency specialising in secure, scalable digital systems, multi-tenant stakeholder portals, GovTech platforms, ESG analytics dashboards, and POPIA-compliant cloud-native applications for governments, educational institutions, and corporate enterprises across South Africa and Africa.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5 De Friedland St, Capital Park",
+            "addressLocality": "Pretoria",
+            "addressRegion": "Gauteng",
+            "postalCode": "0084",
+            "addressCountry": "ZA"
+          },
+          "award": ["Telkom Innovation Awards 2025 — Winner", "ABSA x YEI Emerging Innovators Programme — Recognised"],
+          "knowsAbout": [
+            "Enterprise Software Engineering", "GovTech Platform Development",
+            "POPIA Compliance Engineering", "Multi-Tenant Platform Architecture",
+            "Supabase Row-Level Security", "React ASP.NET Core Development",
+            "ESG Analytics Dashboards", "Docker Kubernetes Deployment"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://xanziteh.co.za/#techstack",
+          "name": "XANZI Tech Engineering Stack",
+          "applicationCategory": "Enterprise Web Platform Engineering",
+          "operatingSystem": "Linux, Docker, Kubernetes, Vercel Edge",
+          "description": "XANZI Tech builds enterprise digital systems using React, Vite, Framer Motion, ASP.NET Core (C#), PostgreSQL, Supabase with Row-Level Security, Docker, and Kubernetes.",
+          "programmingLanguage": ["JavaScript", "TypeScript", "C#", "SQL"],
+          "runtimePlatform": ["Node.js", ".NET 8", "PostgreSQL 15", "Docker", "Kubernetes"],
+          "creator": { "@id": "https://xanziteh.co.za/#organization" },
+          "keywords": "React, Vite, Framer Motion, ASP.NET Core, C#, PostgreSQL, Supabase, Row-Level Security, Docker, Kubernetes, Redis, Vercel, REST API, RBAC, POPIA compliance"
+        }
       ]
     }
     </script>
