@@ -22,6 +22,8 @@ import FAQ from './components/FAQ';
 import Insights from './components/Insights';
 import ArticlePage from './components/ArticlePage';
 import logo from './assets/logo.png';
+import SEOHead from './components/SEOHead';
+import { pageMeta, organizationSchema } from './lib/seoConfig';
 
 /* ---- Intro overlay ---- */
 function Loader({ onComplete }) {
@@ -84,6 +86,14 @@ const pageVariants = {
 function HomePage({ ready }) {
   return (
     <>
+      <SEOHead
+        title={pageMeta.home.title}
+        description={pageMeta.home.description}
+        canonical={pageMeta.home.canonical}
+        keywords={pageMeta.home.keywords}
+        og={pageMeta.home.og}
+        schema={organizationSchema}
+      />
       <Hero ready={ready} />
       <Capabilities />
       <Process />

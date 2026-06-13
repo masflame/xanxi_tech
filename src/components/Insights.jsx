@@ -25,6 +25,43 @@ const articles = [
     excerpt:
       'From storing secrets in frontend code to skipping row-level policies, these common oversights leave organisations exposed.',
   },
+  // ── CONTENT ROADMAP: 5 authoritative inbound SEO articles ──────────────────
+  // Targeting: transactional + problem-solving long-tail enterprise keywords
+  {
+    slug: 'popia-compliance-database-architecture',
+    tag: 'Compliance & Security',
+    title: 'How POPIA shapes your database architecture',
+    excerpt:
+      'POPIA compliance is not a checkbox after development. It shapes your data model, retention policies, and encryption strategy from the first migration.',
+  },
+  {
+    slug: 'row-level-security-supabase-enterprise',
+    tag: 'Security Engineering',
+    title: 'Row-Level Security in Supabase: the enterprise guide',
+    excerpt:
+      'A step-by-step breakdown of how we implement RLS policies in multi-tenant Supabase backends to ensure no user ever sees data they are not authorised to access.',
+  },
+  {
+    slug: 'multi-tenant-stakeholder-portal-architecture',
+    tag: 'Platform Architecture',
+    title: 'Architecting multi-tenant stakeholder portals that scale',
+    excerpt:
+      'The decisions that separate a portal that handles 50 users from one that handles 50,000 — tenant isolation, access control patterns, and data layer design.',
+  },
+  {
+    slug: 'govtech-digital-transformation-south-africa',
+    tag: 'GovTech',
+    title: 'What government entities must demand from software agencies',
+    excerpt:
+      'Most GovTech projects fail because of the wrong vendor, not the wrong technology. Here is what security-first, POPIA-compliant digital transformation actually requires.',
+  },
+  {
+    slug: 'esg-analytics-platform-development',
+    tag: 'ESG & Analytics',
+    title: 'Engineering real-time ESG and carbon analytics platforms',
+    excerpt:
+      'How we connected municipalities, waste operators and executives to a single live compliance reporting system — the architecture, data pipelines, and lessons learned.',
+  },
 ];
 
 const itemVariants = {
