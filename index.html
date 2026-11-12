@@ -569,6 +569,93 @@ h2{font-size:30px;line-height:1.12}
   .footer .brandmark { width: 140px; height: 42px; }
   .wa { display: none; }
 }
+
+@media (min-width: 1021px) {
+  .top { font-size: 12px; line-height: 1; }
+  .top .wrap, .header .wrap { width: min(1138px, calc(100% - 64px)); }
+  .top .wrap { padding: 10px 0; }
+  .hero .wrap {
+    width: min(1138px, calc(100% - 64px));
+    min-height: 0;
+    height: clamp(500px, 40.31vw, 674px);
+    padding: 0;
+  }
+  .hero-text { max-width: 650px; transform: translateY(24px); }
+  .hero-accent {
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin: 0 0 22px 4px;
+    background: var(--aqua);
+  }
+  .hero h1 {
+    font-size: clamp(46px, 4.4856vw, 75px);
+    font-weight: 600;
+    line-height: .916;
+    letter-spacing: -.012em;
+    white-space: normal;
+  }
+  .hero h1 > span, .hero h1 > em { display: block; }
+  .hero h1 em {
+    color: var(--aqua);
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: inherit;
+  }
+  .hero p {
+    max-width: 540px;
+    margin-top: 24px;
+    font-size: clamp(18px, 1.128vw, 18.85px);
+    line-height: 1.49;
+  }
+  .hero .actions { gap: 22px; margin-top: 36px; }
+  .hero .actions .btn {
+    height: 53px;
+    min-height: 53px;
+    justify-content: flex-start;
+    padding: 0 28px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  .hero .actions .btn-light {
+    width: 220px;
+    background: var(--aqua);
+    color: var(--deep);
+  }
+  .hero .actions .btn-outline { width: 199px; }
+  .hero:after {
+    background: linear-gradient(90deg, rgba(6,38,45,.22) 0%, rgba(6,38,45,.8) 40%, rgba(6,38,45,.12) 68%, rgba(6,38,45,.04) 100%);
+  }
+  .ticker {
+    display: flex;
+    height: 53px;
+    align-items: center;
+    padding: 0;
+  }
+  .ticker-track {
+    color: #fff;
+    font-size: 11.57px;
+    animation: none;
+  }
+  .ticker span { gap: 28px; padding-right: 28px; }
+  .ticker i { flex: none; }
+  .cred .wrap { width: min(1138px, calc(100% - 64px)); }
+  .cred .rec { height: 103px; padding: 0; gap: 0; }
+  .cred .rec small { padding-right: 36px; font-size: 13px; }
+  .cred .rec > div {
+    gap: 12px;
+    padding: 0 28px;
+    border-left: 1.5px solid var(--ink);
+    font-size: 11.7px;
+  }
+  .cred .rec > div:nth-of-type(2) { font-size: 11.2px; }
+  .cred .rec svg { width: 28px; height: 28px; }
+}
+@media (max-width: 1020px) {
+  .hero-accent { display: none; }
+  .hero h1 em { color: inherit; font-family: inherit; font-style: normal; }
+}
 </style>
 
 <meta charset="UTF-8" />
@@ -747,18 +834,19 @@ h2{font-size:30px;line-height:1.12}
   </svg>
   <div class="hero-photo"><div class="photo r43"><img src="./src/assets/hero.webp" alt="Engineers collaborating around a table with laptops" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async"></div></div>
   <div class="wrap"><div class="hero-text">
-    <h1>Dependable software for the organisations that run on it.</h1>
+    <span class="hero-accent" aria-hidden="true"></span>
+    <h1><span>Dependable</span> <span>software for the</span> <em>organisations</em> <span>that run on it.</span></h1>
     <p>We design and build digital platforms, secure portals and data systems for institutions, enterprises and growing businesses across South Africa.</p>
     <div class="actions"><a class="btn btn-light arrow" href="#contact">Discuss your project&nbsp;</a><a class="btn btn-outline" href="#services">Explore our services</a></div>
   </div></div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Platform development<i></i>Secure portals<i></i>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i></span><span>Platform development<i></i>Secure portals<i></i>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i>Platform development<i></i>Secure portals<i></i></span><span>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i>Platform development<i></i>Secure portals<i></i></span></div></div>
 
 <section class="cred"><div class="wrap rec">
-  <small>Recognised by</small>
+  <small>Recognised by:</small>
   <div><svg viewBox="0 0 34 34"><circle cx="17" cy="14" r="8"/><path d="M12 21l-3 9 8-4 8 4-3-9"/></svg>Telkom Transformation &amp; Innovation Awards 2025</div>
-  <div><svg viewBox="0 0 34 34"><path d="M17 4l11 5v8c0 7-5 11-11 13C11 28 6 24 6 17V9z"/><path d="M12 17l4 4 7-8"/></svg>ABSA × YEI Emerging Innovators</div>
+  <div><svg viewBox="0 0 34 34"><path d="M17 4l11 5v8c0 7-5 11-11 13C11 28 6 24 6 17V9z"/><path d="M12 17l4 4 7-8"/></svg>ABSA + YEI Emerging Innovators</div>
 </div></section>
 
 <!-- TRUSTED BY STRIP -->
@@ -1022,7 +1110,27 @@ document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 })();
 
 /* hero headline: words rise in */
-(function(){const h=document.querySelector(".hero h1");if(!h||matchMedia("(prefers-reduced-motion:reduce)").matches)return;let k=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(w=>'<span class="w"><span style="--k:'+(k++)+'">'+w+'</span></span> ').join("");})();
+(function(){
+  const h=document.querySelector(".hero h1");
+  if(!h||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  let k=0;
+  const walker=document.createTreeWalker(h,NodeFilter.SHOW_TEXT);
+  const nodes=[];
+  while(walker.nextNode())nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const fragment=document.createDocumentFragment();
+    node.textContent.split(/(\s+)/).forEach(part=>{
+      if(!part.trim()){fragment.append(part);return}
+      const wrapper=document.createElement("span"),word=document.createElement("span");
+      wrapper.className="w";
+      word.style.setProperty("--k",k++);
+      word.textContent=part;
+      wrapper.append(word);
+      fragment.append(wrapper);
+    });
+    node.replaceWith(fragment);
+  });
+})();
 </script>
 </body>
 </html>
