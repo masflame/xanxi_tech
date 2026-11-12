@@ -8,6 +8,7 @@
 <title>XANZI Tech | Software Engineering, Pretoria</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="./src/assets/hero.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
 <!--
   PHOTOS: every image tries your own file first (images/<name>.jpg next to this page),
@@ -91,7 +92,7 @@ h3{font-size:22px}
 .hero-photo .photo img{height:100%;object-fit:cover;object-position:center}
 .hero-photo .photo:before{display:none}
 .hero-photo img{opacity:.9}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep) 0%,rgba(6,38,45,.94) 38%,rgba(6,38,45,.35) 70%,rgba(6,38,45,.1) 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,38,45,.45) 0%,rgba(6,38,45,.9) 38%,rgba(6,38,45,.35) 70%,rgba(6,38,45,.1) 100%)}
 .hero .wrap{position:relative;z-index:2;padding:118px 0 112px;min-height:620px;display:flex;align-items:center}
 .hero-text{max-width:700px}
 .hero h1{font-size:clamp(36px,4.4vw,58px);line-height:1.06;letter-spacing:-.04em}
@@ -491,7 +492,7 @@ h2{font-size:30px;line-height:1.12}
 /* ===== v3: borrowed techniques (line-drawn scene, word-rise headline, ticker, progress) + WhatsApp ===== */
 .header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--aqua),var(--brand))}
 .hero-scene{position:absolute;z-index:2;right:max(32px,calc((100% - var(--max))/2));top:50%;translate:0 -50%;width:min(40%,470px);pointer-events:none}
-@media(min-width:1021px){.hero .waves{left:-10vw;width:120vw;max-width:none}}
+@media(min-width:1021px){.hero .waves{left:50%;right:auto;width:100vw;max-width:none;transform:translateX(-50%)}}
 .sc{width:100%;height:auto;overflow:visible}
 .sc .dr{fill:none;stroke:#2fc4b8;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:scDraw 1.6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.5s + var(--i,0)*.09s)}
 .sc .dr.w{stroke:#e3f3f4}.sc .dr.b{stroke-width:6}
@@ -744,7 +745,7 @@ h2{font-size:30px;line-height:1.12}
 <path d="M-20 333.0 L-4 336.7 L12 340.8 L28 345.3 L44 350.2 L60 355.4 L76 360.8 L92 366.6 L108 372.5 L124 378.6 L140 384.9 L156 391.2 L172 397.6 L188 403.9 L204 410.2 L220 416.4 L236 422.4 L252 428.2 L268 433.8 L284 439.0 L300 444.0 L316 448.5 L332 452.6 L348 456.3 L364 459.5 L380 462.2 L396 464.3 L412 465.9 L428 466.9 L444 467.4 L460 467.2 L476 466.5 L492 465.3 L508 463.4 L524 461.0 L540 458.1 L556 454.6 L572 450.7 L588 446.3 L604 441.5 L620 436.3 L636 430.8 L652 425.0 L668 418.9 L684 412.7 L700 406.3 L716 399.8 L732 393.3 L748 386.8 L764 380.3 L780 374.0 L796 367.8 L812 361.8 L828 356.1 L844 350.6 L860 345.6 L876 340.8 L892 336.5 L908 332.7 L924 329.3 L940 326.4 L956 324.0 L972 322.1 L988 320.8 L1004 320.0 L1020 319.7 L1036 319.9 L1052 320.7 L1068 321.9 L1084 323.7 L1100 325.9 L1116 328.5 L1132 331.5 L1148 334.9 L1164 338.6 L1180 342.6 L1196 346.9 L1212 351.4 L1228 356.0" stroke="url(#wg)" stroke-opacity="0.46"/>
 <path d="M-20 344.6 L-4 348.8 L12 353.5 L28 358.4 L44 363.7 L60 369.3 L76 375.2 L92 381.2 L108 387.4 L124 393.7 L140 400.1 L156 406.5 L172 412.9 L188 419.3 L204 425.5 L220 431.5 L236 437.3 L252 442.8 L268 448.0 L284 452.9 L300 457.4 L316 461.4 L332 465.0 L348 468.0 L364 470.6 L380 472.5 L396 474.0 L412 474.8 L428 475.1 L444 474.7 L460 473.8 L476 472.3 L492 470.2 L508 467.5 L524 464.3 L540 460.6 L556 456.4 L572 451.8 L588 446.7 L604 441.3 L620 435.5 L636 429.4 L652 423.1 L668 416.6 L684 409.9 L700 403.2 L716 396.4 L732 389.7 L748 383.0 L764 376.4 L780 370.0 L796 363.9 L812 358.0 L828 352.4 L844 347.2 L860 342.3 L876 337.9 L892 334.0 L908 330.5 L924 327.5 L940 325.1 L956 323.2 L972 321.8 L988 321.0 L1004 320.7 L1020 321.0 L1036 321.8 L1052 323.1 L1068 324.9 L1084 327.1 L1100 329.8 L1116 333.0 L1132 336.4 L1148 340.3 L1164 344.4 L1180 348.8 L1196 353.4 L1212 358.1 L1228 363.0" stroke="url(#wg)" stroke-opacity="0.36"/>
   </svg>
-  <div class="hero-photo"><div class="photo r43"><img data-src="images/hero.jpg|https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=70" alt="Engineers collaborating around a table with laptops"></div></div>
+  <div class="hero-photo"><div class="photo r43"><img src="./src/assets/hero.webp" alt="Engineers collaborating around a table with laptops" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async"></div></div>
   <div class="wrap"><div class="hero-text">
     <h1>Dependable software for the organisations that run on it.</h1>
     <p>We design and build digital platforms, secure portals and data systems for institutions, enterprises and growing businesses across South Africa.</p>
