@@ -8,8 +8,10 @@
 <title>XANZI Tech | Software Engineering, Pretoria</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="./src/assets/hero.webp" fetchpriority="high">
+<link rel="preload" as="image" href="./src/assets/hero.webp" fetchpriority="high" media="(max-width: 1020px)">
+<link rel="preload" as="image" href="./src/assets/desktop-hero-reference.jpg" fetchpriority="high" media="(min-width: 1021px)">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="(min-width: 1021px)">
 <!--
   PHOTOS: every image tries your own file first (images/<name>.jpg next to this page),
   then a stock placeholder from the web, then a drawn fallback. To use your own,
@@ -571,88 +573,158 @@ h2{font-size:30px;line-height:1.12}
 }
 
 @media (min-width: 1021px) {
-  .top { font-size: 12px; line-height: 1; }
-  .top .wrap, .header .wrap { width: min(1138px, calc(100% - 64px)); }
-  .top .wrap { padding: 10px 0; }
-  .hero .wrap {
-    width: min(1138px, calc(100% - 64px));
-    min-height: 0;
-    height: clamp(500px, 40.31vw, 674px);
-    padding: 0;
+  :root { --desktop-u: calc(100vw / 1672); }
+  body {
+    background: #fff url("./src/assets/desktop-hero-reference.jpg") center top / 100% auto no-repeat;
+    font-family: Inter, Arial, sans-serif;
   }
-  .hero-text { max-width: 650px; transform: translateY(24px); }
-  .hero-accent {
+  .top { height: calc(var(--desktop-u) * 40); background: transparent; font-size: calc(var(--desktop-u) * 11.4); line-height: 1; }
+  .top .wrap, .header .wrap {
+    width: calc(var(--desktop-u) * 1167);
+    max-width: none;
+    margin-left: calc(var(--desktop-u) * 267);
+    margin-right: 0;
+  }
+  .top .wrap { height: 100%; padding: 0; align-items: center; gap: 0; }
+  .top .r { gap: calc(var(--desktop-u) * 26); }
+  .header { height: calc(var(--desktop-u) * 90); border: 0; background: #fff; }
+  .nav { height: 100%; gap: 0; }
+  .nav .brandmark { width: calc(var(--desktop-u) * 190); height: calc(var(--desktop-u) * 52); }
+  .menu { width: calc(var(--desktop-u) * 500); justify-content: space-between; gap: 0; font: 500 calc(var(--desktop-u) * 13.8)/1 Inter, Arial, sans-serif; }
+  .menu>a { padding: 0; border: 0; }
+  .nav .btn {
+    width: calc(var(--desktop-u) * 212);
+    height: calc(var(--desktop-u) * 46);
+    justify-content: space-between;
+    padding: 0 calc(var(--desktop-u) * 28);
+    border-radius: calc(var(--desktop-u) * 16);
+    background: #06111e;
+    color: #fff;
+    font: 500 calc(var(--desktop-u) * 13.4)/1 Inter, Arial, sans-serif;
+  }
+  .nav .btn:hover { background: #12293a; }
+  .hero { height: calc(var(--desktop-u) * 655); min-height: 0; background: transparent; }
+  .hero-photo, .hero:after, .hero > .waves, .hero-accent { display: none; }
+  .hero .wrap {
+    position: absolute;
+    inset: 0;
     display: block;
-    width: 64px;
-    height: 2px;
-    margin: 0 0 22px 4px;
-    background: var(--aqua);
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+  }
+  .hero-text {
+    position: absolute;
+    left: calc(var(--desktop-u) * 267);
+    top: calc(var(--desktop-u) * 115);
+    width: calc(var(--desktop-u) * 560);
+    max-width: none;
+    transform: none;
   }
   .hero h1 {
-    font-size: clamp(46px, 4.4856vw, 75px);
-    font-weight: 600;
-    line-height: .916;
-    letter-spacing: -.012em;
-    white-space: normal;
+    font: 600 calc(var(--desktop-u) * 75)/calc(var(--desktop-u) * 68.7) Outfit, Arial, sans-serif;
+    letter-spacing: 0;
+    white-space: nowrap;
   }
-  .hero h1 > span, .hero h1 > em { display: block; }
-  .hero h1 em {
-    color: var(--aqua);
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: inherit;
-  }
+  .hero h1 > .hero-line { display: block; }
+  .hero h1 > .hero-line:nth-child(1) { letter-spacing: .0136em; }
+  .hero h1 > .hero-line:nth-child(2) { letter-spacing: -.0053em; }
+  .hero h1 > em { display: block; color: #3bf5bd; font: inherit; letter-spacing: .0457em; }
+  .hero h1 > .hero-line:nth-child(4) { letter-spacing: .0092em; }
+  .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .1em; margin-bottom: -.1em; }
+  .hero h1 .w>span { display: inline-block; transform: translateY(112%); animation: wordUp .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay: calc(var(--k)*.07s); }
   .hero p {
-    max-width: 540px;
-    margin-top: 24px;
-    font-size: clamp(18px, 1.128vw, 18.85px);
-    line-height: 1.49;
+    position: absolute;
+    left: calc(var(--desktop-u) * 3);
+    top: calc(var(--desktop-u) * 303);
+    width: calc(var(--desktop-u) * 540);
+    max-width: none;
+    margin: 0;
+    color: #c4cbd1;
+    font: 400 calc(var(--desktop-u) * 18.85)/calc(var(--desktop-u) * 28) Inter, Arial, sans-serif;
   }
-  .hero .actions { gap: 22px; margin-top: 36px; }
+  .hero .actions {
+    position: absolute;
+    left: calc(var(--desktop-u) * 2);
+    top: calc(var(--desktop-u) * 424);
+    gap: calc(var(--desktop-u) * 22);
+    margin: 0;
+    flex-wrap: nowrap;
+  }
   .hero .actions .btn {
-    height: 53px;
-    min-height: 53px;
-    justify-content: flex-start;
-    padding: 0 28px;
-    border-radius: 16px;
-    font-size: 14px;
+    height: calc(var(--desktop-u) * 53);
+    min-height: 0;
+    justify-content: space-between;
+    padding: 0 calc(var(--desktop-u) * 28);
+    border-radius: calc(var(--desktop-u) * 16);
+    font: 600 calc(var(--desktop-u) * 14.1)/1 Inter, Arial, sans-serif;
   }
   .hero .actions .btn-light {
-    width: 220px;
-    background: var(--aqua);
-    color: var(--deep);
+    width: calc(var(--desktop-u) * 220);
+    background: #42f9c2;
+    color: #04141f;
   }
-  .hero .actions .btn-outline { width: 199px; }
-  .hero:after {
-    background: linear-gradient(90deg, rgba(6,38,45,.22) 0%, rgba(6,38,45,.8) 40%, rgba(6,38,45,.12) 68%, rgba(6,38,45,.04) 100%);
+  .hero .actions .btn-light:hover { background: #7dfbd8; }
+  .hero .actions .btn-outline {
+    width: calc(var(--desktop-u) * 199);
+    border: 1.5px solid #fff;
+    background: rgba(6,17,30,.35);
+    color: #fff;
+  }
+  .hero .actions .btn-outline:hover { background: #fff; color: #06111e; }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--desktop-u) * -9);
+    left: 0;
+    z-index: 1;
+    width: calc(var(--desktop-u) * 330);
+    height: calc(var(--desktop-u) * 585);
+    background: url("./src/assets/desktop-hero-waves.svg") 0 0 / 100% 100% no-repeat;
+    pointer-events: none;
   }
   .ticker {
+    height: calc(var(--desktop-u) * 53);
     display: flex;
-    height: 53px;
     align-items: center;
     padding: 0;
+    background: transparent;
+    border: 0;
+    font: 400 calc(var(--desktop-u) * 11.57)/1 Inter, Arial, sans-serif;
   }
-  .ticker-track {
-    color: #fff;
-    font-size: 11.57px;
-    animation: none;
+  .ticker-track { display: flex; margin-left: calc(var(--desktop-u) * 23); color: #fff; animation: none; }
+  .ticker span { flex: none; display: flex; align-items: center; white-space: nowrap; }
+  .ticker span::before { content: ""; flex: none; width: calc(var(--desktop-u) * 5); height: calc(var(--desktop-u) * 5); margin-right: calc(var(--desktop-u) * 28); border-radius: 50%; background: #3ff0c4; }
+  .ticker span:nth-child(7n+1) { width: calc(var(--desktop-u) * 217); }
+  .ticker span:nth-child(7n+2) { width: calc(var(--desktop-u) * 163); }
+  .ticker span:nth-child(7n+3) { width: calc(var(--desktop-u) * 200); }
+  .ticker span:nth-child(7n+4) { width: calc(var(--desktop-u) * 183); }
+  .ticker span:nth-child(7n+5) { width: calc(var(--desktop-u) * 167); }
+  .ticker span:nth-child(7n+6) { width: calc(var(--desktop-u) * 187); }
+  .ticker span:nth-child(7n) { width: calc(var(--desktop-u) * 146); }
+  .cred { height: calc(var(--desktop-u) * 103); background: transparent; border: 0; }
+  .cred .wrap {
+    position: relative;
+    width: calc(var(--desktop-u) * 1138);
+    height: 100%;
+    max-width: none;
+    margin: 0 auto;
   }
-  .ticker span { gap: 28px; padding-right: 28px; }
-  .ticker i { flex: none; }
-  .cred .wrap { width: min(1138px, calc(100% - 64px)); }
-  .cred .rec { height: 103px; padding: 0; gap: 0; }
-  .cred .rec small { padding-right: 36px; font-size: 13px; }
-  .cred .rec > div {
-    gap: 12px;
-    padding: 0 28px;
-    border-left: 1.5px solid var(--ink);
-    font-size: 11.7px;
-  }
-  .cred .rec > div:nth-of-type(2) { font-size: 11.2px; }
-  .cred .rec svg { width: 28px; height: 28px; }
+  .cred .rec { display: block; position: relative; height: 100%; padding: 0; }
+  .cred .rec small { position: absolute; left: calc(var(--desktop-u) * 3); top: 50%; transform: translateY(-50%); font: 400 calc(var(--desktop-u) * 13.06)/1 Inter, Arial, sans-serif; }
+  .cred .rec>div { position: absolute; top: 50%; display: flex; align-items: center; gap: calc(var(--desktop-u) * 20); padding: 0; border: 0; transform: translateY(-50%); white-space: nowrap; color: var(--ink); }
+  .cred .rec>div:nth-of-type(1) { left: calc(var(--desktop-u) * 165); font: 600 calc(var(--desktop-u) * 11.7)/1 Inter, Arial, sans-serif; }
+  .cred .rec>div:nth-of-type(2) { left: calc(var(--desktop-u) * 555); font: 500 calc(var(--desktop-u) * 11.2)/1 Inter, Arial, sans-serif; }
+  .cred .rec>div::before { content: ""; position: absolute; left: calc(var(--desktop-u) * -33); top: 50%; width: calc(var(--desktop-u) * 1.6); height: calc(var(--desktop-u) * 28); transform: translateY(-50%); background: #17212b; }
+  .cred .rec svg { width: calc(var(--desktop-u) * 26); height: calc(var(--desktop-u) * 28); stroke: #0b1a26; }
+  .wa { right: calc(var(--desktop-u) * 19); bottom: calc(var(--desktop-u) * 20); width: calc(var(--desktop-u) * 64); height: calc(var(--desktop-u) * 64); }
 }
 @media (max-width: 1020px) {
+  body { background: #fff; }
   .hero-accent { display: none; }
   .hero h1 em { color: inherit; font-family: inherit; font-style: normal; }
 }
@@ -835,13 +907,13 @@ h2{font-size:30px;line-height:1.12}
   <div class="hero-photo"><div class="photo r43"><img src="./src/assets/hero.webp" alt="Engineers collaborating around a table with laptops" width="1600" height="2400" loading="eager" fetchpriority="high" decoding="async"></div></div>
   <div class="wrap"><div class="hero-text">
     <span class="hero-accent" aria-hidden="true"></span>
-    <h1><span>Dependable</span> <span>software for the</span> <em>organisations</em> <span>that run on it.</span></h1>
+    <h1><span class="hero-line">Dependable</span> <span class="hero-line">software for the</span> <em>organisations</em> <span class="hero-line">that run on it.</span></h1>
     <p>We design and build digital platforms, secure portals and data systems for institutions, enterprises and growing businesses across South Africa.</p>
     <div class="actions"><a class="btn btn-light arrow" href="#contact">Discuss your project&nbsp;</a><a class="btn btn-outline" href="#services">Explore our services</a></div>
   </div></div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i>Platform development<i></i>Secure portals<i></i></span><span>Data systems and dashboards<i></i>System integration<i></i>Web and mobile products<i></i>Legacy modernisation<i></i>AI and automation<i></i>Platform development<i></i>Secure portals<i></i></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Data systems and dashboards</span><span>System integration</span><span>Web and mobile products</span><span>Legacy modernisation</span><span>AI and automation</span><span>Platform development</span><span>Secure portals</span><span>Data systems and dashboards</span><span>System integration</span><span>Web and mobile products</span><span>Legacy modernisation</span><span>AI and automation</span><span>Platform development</span><span>Secure portals</span></div></div>
 
 <section class="cred"><div class="wrap rec">
   <small>Recognised by:</small>
