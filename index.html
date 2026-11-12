@@ -189,6 +189,8 @@ h3{font-size:22px}
 .svcard:nth-child(2){border-top-color:var(--aqua)}.svcard:nth-child(3){border-top-color:var(--deep)}
 .svcard:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(6,38,45,.12)}
 .svcard>svg{width:100%;height:190px;color:var(--brand);background:#fff;border-bottom:1px solid var(--line);padding:14px;display:block}
+.svcard>svg>*{opacity:0;transform:translateY(12px) scale(.96);transform-box:fill-box;transform-origin:center;transition:opacity .55s ease,transform .65s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--step,0)*55ms)}
+.svcard>svg>:nth-child(2){--step:1}.svcard>svg>:nth-child(3){--step:2}.svcard>svg>:nth-child(4){--step:3}.svcard>svg>:nth-child(5){--step:4}.svcard>svg>:nth-child(6){--step:5}.svcard>svg>:nth-child(7){--step:6}.svcard>svg>:nth-child(8){--step:7}.svcard>svg>:nth-child(9){--step:8}.svcard>svg>:nth-child(10){--step:9}.svcard>svg>:nth-child(11){--step:10}.svcard>svg>:nth-child(12){--step:11}.svcard>svg>:nth-child(13){--step:12}.svcard>svg>:nth-child(14){--step:13}.svcard>svg>:nth-child(15){--step:14}.svcard>svg>:nth-child(16){--step:15}.svcard.in>svg>*{opacity:1;transform:none}
 .svcard>div{padding:28px;display:flex;flex-direction:column;gap:14px;flex:1}
 .svcard h3{font-size:22px;line-height:1.25}
 .svcard p{font-size:15.5px;color:var(--muted)}
@@ -325,7 +327,7 @@ h3{font-size:22px}
   .hero .actions .btn{width:100%;justify-content:center}
   .recog div{grid-template-columns:1fr;gap:4px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.js .reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.js .reveal{opacity:1;transform:none}.svcard>svg>*{opacity:1;transform:none}}
 
 /* ================= DEDICATED MOBILE EXPERIENCE (<=760px) ================= */
 .menu-foot,.dock,.dots,.eng-tabs{display:none}
@@ -489,6 +491,7 @@ h2{font-size:30px;line-height:1.12}
 /* ===== v3: borrowed techniques (line-drawn scene, word-rise headline, ticker, progress) + WhatsApp ===== */
 .header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--aqua),var(--brand))}
 .hero-scene{position:absolute;z-index:2;right:max(32px,calc((100% - var(--max))/2));top:50%;translate:0 -50%;width:min(40%,470px);pointer-events:none}
+@media(min-width:1021px){.hero .waves{left:-10vw;width:120vw;max-width:none}}
 .sc{width:100%;height:auto;overflow:visible}
 .sc .dr{fill:none;stroke:#2fc4b8;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:scDraw 1.6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.5s + var(--i,0)*.09s)}
 .sc .dr.w{stroke:#e3f3f4}.sc .dr.b{stroke-width:6}
